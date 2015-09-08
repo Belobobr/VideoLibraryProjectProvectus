@@ -3,4 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="video_library">Video library</string>
+    <string name="video_preview">Video preview</string>
 </resources>

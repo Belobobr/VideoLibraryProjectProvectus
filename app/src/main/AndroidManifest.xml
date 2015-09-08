@@ -2,13 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.miiskin.videolibraryproject" >
 
+    <permission
+        android:name="ru.miiskin.videolibrary.provider.permission.READ_WRITE_PROVIDER"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="ru.yandex.weather.provider.permission.READ_WRITE_PROVIDER" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".VideoLibraryActivity"
+            android:name=".ui.video.list.VideoLibraryActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +24,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".service.VideoLibraryClientService" />
+
+        <provider
+            android:name=".content.provider.VideoLibraryContentProvider"
+            android:authorities="ru.miiskin.videolibrary.contentprovider"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="ru.miiskin.videolibrary.provider.permission.READ_WRITE_PROVIDER" />
+
     </application>
 
 </manifest>
