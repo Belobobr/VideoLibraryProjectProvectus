@@ -5,8 +5,15 @@
               android:layout_height="match_parent">
 
     <TextView   android:id="@+id/title"
-        android:gravity="center_vertical"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/video_info_list_line_size"/>
+
+    <ImageView  android:id="@+id/video_preview"
+        android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/video_info_list_line_size"/>
+        android:layout_height="250dp"
+        android:scaleType="fitCenter"/>
 
 </LinearLayout>

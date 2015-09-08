@@ -1,6 +1,5 @@
 package com.miiskin.videolibraryproject.ui.video.list;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.LoaderManager;
@@ -16,6 +15,7 @@ import com.miiskin.videolibraryproject.content.loader.VideoInfoListLoader;
 import com.miiskin.videolibraryproject.service.VideoLibraryClientService;
 import com.miiskin.videolibraryproject.ui.AbstractFragment;
 import com.miiskin.videolibraryproject.ui.OnItemClickListener;
+import com.miiskin.videolibraryproject.ui.video.preview.VideoPreviewFragment;
 
 import android.support.v7.widget.RecyclerView;
 

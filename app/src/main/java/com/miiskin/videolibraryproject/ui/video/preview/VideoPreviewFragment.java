@@ -1,4 +1,4 @@
-package com.miiskin.videolibraryproject.ui.video.list;
+package com.miiskin.videolibraryproject.ui.video.preview;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,11 +7,15 @@ import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.miiskin.videolibraryproject.R;
 import com.miiskin.videolibraryproject.content.data.VideoInfo;
 import com.miiskin.videolibraryproject.content.loader.VideoInfoLoader;
 import com.miiskin.videolibraryproject.ui.AbstractFragment;
+import com.miiskin.videolibraryproject.ui.video.list.VideoLibraryActivity;
+
+import butterknife.Bind;
 
 /**
  * Created by Newshka on 08.09.2015.
@@ -21,6 +25,9 @@ public class VideoPreviewFragment extends AbstractFragment implements LoaderMana
     private static final String EXTRA_VIDEO_ID = "video_id";
     private int mVideoId;
     private VideoInfo mVideoInfo;
+
+    @Bind(R.id.description)
+    TextView mTextView;
 
     public static VideoPreviewFragment newInstance(final int videoId) {
         VideoPreviewFragment videoPreviewFragment = new VideoPreviewFragment();
@@ -69,5 +76,6 @@ public class VideoPreviewFragment extends AbstractFragment implements LoaderMana
             final VideoLibraryActivity videoLibraryActivity = (VideoLibraryActivity)getActivity();
             videoLibraryActivity.setToolbarTitle(mVideoInfo.getTitle());
         }
+        mTextView.setText(mVideoInfo.getOverview());
     }
 }
