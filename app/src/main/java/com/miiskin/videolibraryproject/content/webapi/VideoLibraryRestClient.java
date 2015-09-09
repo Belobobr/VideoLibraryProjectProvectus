@@ -9,7 +9,7 @@ import com.miiskin.videolibraryproject.content.webapi.client.DebugLog;
 import com.miiskin.videolibraryproject.content.webapi.client.ResourceBasedEndpoint;
 import com.miiskin.videolibraryproject.content.webapi.client.VideoErrorHandler;
 import com.miiskin.videolibraryproject.content.webapi.client.VideoJsonConverter;
-import com.miiskin.videolibraryproject.content.webapi.client.WeatherOkHttpClient;
+import com.miiskin.videolibraryproject.content.webapi.client.VideoOkHttpClient;
 
 import retrofit.ErrorHandler;
 import retrofit.RestAdapter;
@@ -31,7 +31,7 @@ public class VideoLibraryRestClient {
 
         final Context appContext = context.getApplicationContext();
 
-        final Client client = WeatherOkHttpClient.create(appContext);
+        final Client client = VideoOkHttpClient.create(appContext);
         final RestAdapter.Log log = new DebugLog(LOG_TAG);
         final ErrorHandler errorHandler = new VideoErrorHandler();
         final Converter converter = VideoJsonConverter.create();

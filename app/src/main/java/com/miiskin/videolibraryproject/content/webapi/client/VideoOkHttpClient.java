@@ -19,7 +19,7 @@ import retrofit.mime.TypedInput;
 /**
  * Created by ustimov on 01.08.2015.
  */
-public class WeatherOkHttpClient {
+public class VideoOkHttpClient {
 
     private static final int CONNECTION_TIMEOUT = 40;
     private static final int WRITE_TIMEOUT = 20;
@@ -39,7 +39,7 @@ public class WeatherOkHttpClient {
         }
     }
 
-    private WeatherOkHttpClient() {
+    private VideoOkHttpClient() {
     }
 
     private static class WeatherClient implements Client {
